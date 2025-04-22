@@ -1,27 +1,30 @@
 @extends('layout')
- @section('title', 'master item')
- @section('content-title', 'Item')    
+ @section('title', 'Transaction')
+ @section('content-title', 'transacion')    
+ @section('content')
+ 
  @section('content')
  <div class="col-md-10 text-dark " style="">
      <div class="col-md-7 mt-3 ps-2">
          <div class="card">
-             <div class="card-header"><h1>Item</h1></div>
+             <div class="card-header"><h1>Transaction</h1></div>
              <div class="card-body">
                  <table class="table table-striped">
                      <thead>
                      <tr>
                          <th scope="col">No.</th>
-                         <th scope="col">Item</th>
-                         <th scope="col">Category</th>
-                         <th scope="col">Action</th>
+                         <th scope="col">Date</th>
+                         <th scope="col">Total</th>
+                         <th scope="col">Actions</th>
                      </tr>
                      </thead>
-                     @forelse($items as $item)
+                     @forelse($transactions as $transaction)
                      <tbody>
                          <tr>
                              <th scope="row">{{ $loop->iteration}}</th>
-                             <td>{{$item->name}}</td>
-                             <td>{{$item -> category -> name}}</td>
+                             <td>{{$transaction->date}}</td>
+                             <td>{{$transaction->total}}</td>
+                             <td>{{$transaction->pay_total}}</td>
                              <td>
                                  <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#detailproject"><i class="bi bi-info-circle"></i></button>
                                  <a href="" class="btn btn-sm btn-success"><i class="bi bi-pencil-square"></i></a>
