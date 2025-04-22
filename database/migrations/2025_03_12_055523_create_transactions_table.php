@@ -31,4 +31,4 @@
      {
          Schema::dropIfExists('transactions');
      }
- };
+ };   
