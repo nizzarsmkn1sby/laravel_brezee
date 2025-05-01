@@ -15,9 +15,14 @@
  Route::get('/dashboard', function () {
      return view('dashboard');
  })->middleware(['auth', 'verified'])->name('dashboard');
- Route::resource('/category', CategoryController::class);
+//  category
+ Route::resource('category', CategoryController::class);
+
+//  item
  Route::resource('/item', ItemController::class);
+//  Transaction
  Route::resource('/transaction', TransactionController::class);
+//  Transaction Detail
  Route::resource('/detail', TransactionDetailController::class);
  
  
